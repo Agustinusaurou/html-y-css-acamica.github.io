@@ -1,0 +1,800 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+p {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  color: #060A24;
+}
+
+a {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header img {
+  position: absolute;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 16px;
+}
+
+header nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  align-items: flex-end;
+}
+
+header nav div {
+  z-index: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+header nav div div {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+header nav div div span {
+  width: 16px;
+  height: 2px;
+  margin-bottom: 3px;
+  background-color: #000000;
+  position: relative;
+  margin-right: 19px;
+  -webkit-transform-origin: 3px 0px;
+          transform-origin: 3px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+header nav div div span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+header nav div div span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+header nav div input {
+  position: absolute;
+  z-index: 3;
+  margin-right: 22px;
+  margin-top: 18px;
+  opacity: 0;
+}
+
+header nav div input:checked ~ div span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(-8px, -6px);
+          transform: rotate(45deg) translate(-8px, -6px);
+}
+
+header nav div input:checked ~ div span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header nav div input:checked ~ div span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(-3px, 2px);
+          transform: rotate(-45deg) translate(-3px, 2px);
+}
+
+header nav div input:checked ~ .menu {
+  -webkit-animation-name: abrir-menu;
+          animation-name: abrir-menu;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+header nav div input:checked ~ .menu li a:hover {
+  color: #00f3bb;
+  text-decoration: line-through;
+}
+
+header nav div input:checked ~ .menu li a:active {
+  color: rgba(6, 10, 36, 0.56);
+}
+
+header nav div ul {
+  width: 100%;
+  height: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  background-color: #0000EC;
+  padding-top: 16px;
+}
+
+header nav div ul li {
+  list-style: none;
+  padding-bottom: 24px;
+}
+
+header nav div ul li a {
+  padding-left: 16px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    position: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    padding: 20px;
+    padding-left: 100px;
+  }
+  header img {
+    position: unset;
+    width: 36px;
+    height: 36px;
+    padding-bottom: 0px;
+  }
+  header nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    width: 50%;
+    padding-right: 100px;
+    background-color: #ffffff;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  header nav div {
+    position: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  header nav div div {
+    display: block;
+    height: 0px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+  }
+  header nav div div span {
+    height: 0px;
+    border: 0px;
+  }
+  header nav div input {
+    width: 0px;
+    height: 0px;
+  }
+  header nav div ul {
+    width: 100%;
+    background-color: #ffffff;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header nav div ul li {
+    list-style: none;
+  }
+  header nav div ul li a {
+    font-size: 16px;
+    color: #060A24;
+  }
+  header nav div ul li a:hover {
+    color: #00f3bb;
+    text-decoration: line-through;
+  }
+  header nav div ul li a:active {
+    color: rgba(6, 10, 36, 0.56);
+  }
+}
+
+@-webkit-keyframes abrir-menu {
+  from {
+    height: 0%;
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+  }
+  to {
+    height: 100%;
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+  }
+}
+
+@keyframes abrir-menu {
+  from {
+    height: 0%;
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+  }
+  to {
+    height: 100%;
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+  }
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+main section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+main section h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+main section article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+main section article div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+main section article div h1 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+  padding-bottom: 20px;
+}
+
+main section article div h1.tachado {
+  text-decoration: line-through;
+}
+
+main section article button {
+  width: 288px;
+  height: 48px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #00F3BB;
+  border: none;
+  letter-spacing: 0;
+}
+
+main section article button:hover {
+  background-image: -webkit-linear-gradient(0deg, #00F0B8, #0000FE);
+  color: #ffffff;
+}
+
+main section.presentacion {
+  padding-top: 29px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 24px;
+}
+
+main section.presentacion article {
+  width: 288px;
+}
+
+main section.presentacion article p {
+  text-align: justify;
+  padding-bottom: 36px;
+}
+
+main section.episodios {
+  background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 1100px, #ffffff 1101px);
+  padding-bottom: 1px;
+}
+
+main section.episodios h2 {
+  padding-top: 64px;
+  color: #ffffff;
+}
+
+main section.episodios section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 21px;
+  padding-bottom: 37px;
+}
+
+main section.episodios section article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 11px;
+}
+
+main section.episodios section article iframe {
+  width: 100%;
+  height: 225px;
+  border-radius: 10px;
+}
+
+main section.nosotros {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-linear-gradient(95deg, #ffffff 810px, #0000A3 811.5px, #0000FF 8000px);
+  padding-bottom: 54px;
+}
+
+main section.nosotros img {
+  width: 360px;
+  height: 519px;
+}
+
+main section.nosotros article h2 {
+  padding-top: 27px;
+  padding-bottom: 8px;
+}
+
+main section.nosotros article p {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+main section.entrevistas {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  padding-bottom: 48px;
+}
+
+main section.entrevistas h2 {
+  padding-bottom: 14px;
+}
+
+main section.entrevistas article {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+main section.entrevistas article img {
+  width: 100%;
+}
+
+main section.topicos h2 {
+  padding-bottom: 14px;
+}
+
+main section.topicos section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 0px;
+}
+
+main section.topicos section article {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section.topicos section article img {
+  width: 104px;
+  height: 104px;
+  padding-top: 23px;
+}
+
+main section.topicos section article h3 {
+  font-family: "IBM Plex Sans-SemiBold", sans-serif;
+  font-size: 24px;
+  color: #060A24;
+  letter-spacing: 0;
+  text-align: center;
+  padding-top: 13px;
+  padding-bottom: 42px;
+}
+
+main section.novedades {
+  background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 300px, #ffffff 301px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section.novedades article {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 64px;
+  padding-bottom: 67px;
+}
+
+main section.novedades article h2 {
+  padding: 0;
+  color: #ffffff;
+  padding-bottom: 36px;
+  text-align: center;
+}
+
+main section.novedades article a {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 500px) {
+  main section h2 {
+    font-size: 48px;
+    padding-left: 200px;
+    padding-top: 40px;
+  }
+  main section article div h1 {
+    font-size: 64px;
+    letter-spacing: 0;
+  }
+  main section article div h1.azul {
+    color: #0000A3;
+  }
+  main section article a input {
+    width: 226px;
+    height: 56px;
+    font-size: 18px;
+    border: none;
+  }
+  main section.presentacion {
+    padding-top: 120px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 5px;
+  }
+  main section.presentacion article {
+    width: 100%;
+  }
+  main section.presentacion article p {
+    padding-bottom: 56px;
+    width: 628px;
+  }
+  main section.episodios {
+    background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 940px, #ffffff 941px);
+    padding-bottom: 38px;
+  }
+  main section.episodios h2 {
+    padding-top: 186px;
+  }
+  main section.episodios section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  main section.episodios section article {
+    padding-top: 26px;
+    padding-bottom: 46px;
+    width: 47%;
+  }
+  main section.episodios section article iframe {
+    width: 100%;
+    height: 232px;
+    border-radius: 10px;
+  }
+  main section.nosotros {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-image: -webkit-linear-gradient(95deg, #ffffff 680px, #0000A3 684.5px, #0000FF 1800px);
+  }
+  main section.nosotros img {
+    width: 457.6px;
+    height: 660px;
+    padding-right: 31.2px;
+  }
+  main section.nosotros article {
+    padding-left: 31.2px;
+  }
+  main section.nosotros article h2 {
+    padding-left: 0px;
+    padding-top: 189px;
+    padding-bottom: 24px;
+  }
+  main section.nosotros article p {
+    width: 464px;
+    height: 204px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+  }
+  main section.entrevistas {
+    padding-bottom: 64px;
+  }
+  main section.entrevistas h2 {
+    padding-top: 64px;
+    padding-bottom: 36px;
+  }
+  main section.entrevistas article {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    width: 101.5%;
+  }
+  main section.entrevistas article img {
+    width: 33%;
+  }
+  main section.topicos h2 {
+    padding-bottom: 56px;
+  }
+  main section.topicos section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 34px;
+  }
+  main section.topicos section article {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main section.topicos section article img {
+    width: 260px;
+    height: 130px;
+    padding-top: 0px;
+  }
+  main section.topicos section article h3 {
+    padding-top: 29px;
+  }
+  main section.novedades {
+    background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 510px, #ffffff 511px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main section.novedades article {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 213px;
+    padding-bottom: 151px;
+  }
+  main section.novedades article h2 {
+    padding: 0;
+    color: #ffffff;
+    padding-bottom: 36px;
+    text-align: center;
+  }
+  main section.novedades article a {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main section.novedades article a input {
+    width: 345px;
+  }
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer p {
+  padding-left: 47px;
+  padding-right: 46px;
+  padding-top: 24px;
+}
+
+footer nav {
+  padding-right: 45px;
+  padding-left: 45px;
+  width: 100%;
+}
+
+footer nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer nav ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  padding-bottom: 31px;
+  padding-top: 16px;
+}
+
+footer nav ul li a img {
+  width: 28px;
+  height: 28px;
+}
+
+@media screen and (min-width: 500px) {
+  footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  footer p {
+    padding-left: 100px;
+  }
+  footer nav {
+    padding-right: 100px;
+    width: auto;
+  }
+  footer nav ul li {
+    padding-left: 36px;
+    padding-bottom: 31px;
+    padding-top: 36px;
+  }
+  footer nav ul li a img {
+    width: 28px;
+    height: 28px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

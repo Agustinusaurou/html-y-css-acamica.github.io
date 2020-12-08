@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+p {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  color: $color-texto;
+}
+
+a {
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+
+}
