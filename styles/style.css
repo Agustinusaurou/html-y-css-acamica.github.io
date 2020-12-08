@@ -57,8 +57,6 @@ header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -66,7 +64,6 @@ header nav {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  align-items: flex-end;
 }
 
 header nav div {
@@ -127,45 +124,54 @@ header nav div div span:nth-last-child(2) {
 
 header nav div input {
   position: absolute;
-  z-index: 3;
-  margin-right: 22px;
-  margin-top: 18px;
+  z-index: 2;
+  margin-right: 20px;
+  margin-top: 16px;
   opacity: 0;
 }
 
-header nav div input:checked ~ div span {
+header nav div input.abrir:not(:checked) ~ .menu {
+  -webkit-animation-name: cerrar-menu;
+          animation-name: cerrar-menu;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+header nav div input.abrir:checked ~ .menu {
+  -webkit-animation-name: abrir-menu;
+          animation-name: abrir-menu;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+header nav div input.abrir:checked ~ .menu li a:hover {
+  color: #00f3bb;
+  text-decoration: line-through;
+}
+
+header nav div input.abrir:checked ~ .menu li a:active {
+  color: rgba(6, 10, 36, 0.56);
+}
+
+header nav div input.abrir:checked ~ div span {
   opacity: 1;
   -webkit-transform: rotate(45deg) translate(-8px, -6px);
           transform: rotate(45deg) translate(-8px, -6px);
 }
 
-header nav div input:checked ~ div span:nth-last-child(3) {
+header nav div input.abrir:checked ~ div span:nth-last-child(3) {
   opacity: 0;
   -webkit-transform: rotate(0deg) scale(0.2, 0.2);
           transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-header nav div input:checked ~ div span:nth-last-child(2) {
+header nav div input.abrir:checked ~ div span:nth-last-child(2) {
   -webkit-transform: rotate(-45deg) translate(-3px, 2px);
           transform: rotate(-45deg) translate(-3px, 2px);
-}
-
-header nav div input:checked ~ .menu {
-  -webkit-animation-name: abrir-menu;
-          animation-name: abrir-menu;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-header nav div input:checked ~ .menu li a:hover {
-  color: #00f3bb;
-  text-decoration: line-through;
-}
-
-header nav div input:checked ~ .menu li a:active {
-  color: rgba(6, 10, 36, 0.56);
 }
 
 header nav div ul {
@@ -276,12 +282,12 @@ header nav div ul li a {
 
 @-webkit-keyframes abrir-menu {
   from {
-    height: 0%;
+    height: auto;
     -webkit-transform: translate(0, -100%);
             transform: translate(0, -100%);
   }
   to {
-    height: 100%;
+    height: auto;
     -webkit-transform: translate(0, 0%);
             transform: translate(0, 0%);
   }
@@ -289,14 +295,44 @@ header nav div ul li a {
 
 @keyframes abrir-menu {
   from {
-    height: 0%;
+    height: auto;
     -webkit-transform: translate(0, -100%);
             transform: translate(0, -100%);
   }
   to {
-    height: 100%;
+    height: auto;
     -webkit-transform: translate(0, 0%);
             transform: translate(0, 0%);
+  }
+}
+
+@-webkit-keyframes cerrar-menu {
+  0% {
+    height: auto;
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+  }
+  30% {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes cerrar-menu {
+  0% {
+    height: auto;
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+  }
+  30% {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+  }
+  100% {
+    height: 0px;
   }
 }
 
