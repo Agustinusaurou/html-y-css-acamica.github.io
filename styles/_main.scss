@@ -61,9 +61,11 @@ main {
         }
         &.episodios {
             background-image: -webkit-linear-gradient(95deg,
-            $color-bg 0px,
+            $color-titulo 100px
+            $color-bg 101px,
             $color-bg-segundo 1100px,
             $color-titulo 1101px
+            
             );
             padding-bottom: 1px;
             h2 {
@@ -91,12 +93,6 @@ main {
         }
         &.nosotros {
             justify-content: center;
-            background-image: -webkit-linear-gradient(
-                95deg,
-                $color-titulo 810px,
-                $color-bg 811.5px,
-                $color-bg-segundo 8000px
-            );
             padding-bottom: 54px;
             img {
                 width: 360px;
@@ -226,12 +222,6 @@ main {
                 }
             }
             &.episodios {
-                background-image: -webkit-linear-gradient(
-                    95deg,
-                    $color-bg 0px,
-                    $color-bg-segundo 940px,
-                    $color-titulo 941px
-                );
                 padding-bottom: 38px;
                 h2 {
                     padding-top: 186px;
@@ -256,12 +246,6 @@ main {
             &.nosotros {
                 flex-flow: row wrap;
                 justify-content: center;
-                background-image: -webkit-linear-gradient(
-                    95deg,
-                    $color-titulo 680px,
-                    $color-bg 684.5px,
-                    $color-bg-segundo 1800px
-                );
                 img {
                     width: 457.6px;
                     height: 660px;
