@@ -432,12 +432,22 @@ main section.presentacion article p {
 }
 
 main section.episodios {
-  background-image: -webkit-linear-gradient(95deg, #ffffff 40px, #0000A3 41px, #0000FF 1200px, #ffffff 1201px);
-  padding-bottom: 1px;
+  background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+}
+
+main section.episodios div.diag-inicio {
+  width: 100%;
+  height: 64px;
+  background-image: linear-gradient(175deg, #ffffff 50%, rgba(0, 0, 0, 0) 51%);
+}
+
+main section.episodios div.diag-final {
+  width: 100%;
+  height: 133.5px;
+  background-image: linear-gradient(175deg, rgba(0, 0, 0, 0) 50%, #ffffff 51%);
 }
 
 main section.episodios h2 {
-  padding-top: 64px;
   color: #ffffff;
 }
 
@@ -453,7 +463,6 @@ main section.episodios section {
   padding-left: 11px;
   padding-right: 11px;
   padding-top: 21px;
-  padding-bottom: 132.5px;
 }
 
 main section.episodios section article {
@@ -574,10 +583,16 @@ main section.topicos section article h3 {
 }
 
 main section.novedades {
-  background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 300px, #ffffff 301px);
+  background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main section.novedades div {
+  width: 100%;
+  height: 64px;
+  background-image: linear-gradient(175deg, #ffffff 50%, rgba(0, 0, 0, 0) 51%);
 }
 
 main section.novedades article {
@@ -586,7 +601,6 @@ main section.novedades article {
           align-items: center;
   padding-right: 16px;
   padding-left: 16px;
-  padding-top: 64px;
   padding-bottom: 67px;
 }
 
@@ -637,12 +651,11 @@ main section.novedades article a {
     padding-bottom: 56px;
     width: 628px;
   }
-  main section.episodios {
-    background-image: -webkit-linear-gradient(95deg, #ffffff 140px, #0000A3 141px, #0000FF 1040px, #ffffff 1041px);
-    padding-bottom: 38px;
+  main section.episodios div.diag-inicio {
+    height: 186px;
   }
-  main section.episodios h2 {
-    padding-top: 186px;
+  main section.episodios div.diag-final {
+    height: 186.6px;
   }
   main section.episodios section {
     -webkit-box-orient: horizontal;
@@ -749,16 +762,17 @@ main section.novedades article a {
     padding-top: 29px;
   }
   main section.novedades {
-    background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 510px, #ffffff 511px);
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  main section.novedades div {
+    height: 213px;
   }
   main section.novedades article {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 213px;
     padding-bottom: 151px;
   }
   main section.novedades article h2 {
