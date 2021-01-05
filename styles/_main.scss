@@ -60,12 +60,18 @@ main {
             }
         }
         &.episodios {
-            background-image: linear-gradient(225deg, $color-bg-segundo 0%, $color-bg 100%);
+            background-image: linear-gradient(
+                225deg,
+                $color-bg-segundo 0%,
+                $color-bg 100%);
             div {
                 &.diag-inicio {
                     width: 100%;
                     height: 64px;
-                    background-image: linear-gradient(175deg, $color-titulo 50%, rgba(0, 0, 0, 0%) 51%);
+                    background-image: linear-gradient(
+                        175deg,
+                        $color-titulo 50%,
+                        rgba(0, 0, 0, 0%) 51%);
                 }
                 &.diag-final{
                     width: 100%;
