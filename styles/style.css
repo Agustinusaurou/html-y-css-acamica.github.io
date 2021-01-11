@@ -386,16 +386,19 @@ main section article div {
 }
 
 main section article div h1 {
+  padding-bottom: 20px;
+  line-height: 42px;
+}
+
+main section article div h1 span {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 36px;
   font-weight: 400;
   color: #060A24;
   letter-spacing: 0;
-  line-height: 42px;
-  padding-bottom: 20px;
 }
 
-main section article div h1.tachado {
+main section article div h1 span.tachado {
   text-decoration: line-through;
 }
 
@@ -413,6 +416,7 @@ main section article button {
 main section article button:hover {
   background-image: -webkit-linear-gradient(0deg, #00F0B8, #0000FE);
   color: #ffffff;
+  cursor: pointer;
 }
 
 main section.presentacion {
@@ -625,11 +629,11 @@ main section.novedades article a {
     padding-left: 200px;
     padding-top: 40px;
   }
-  main section article div h1 {
+  main section article div h1 span {
     font-size: 64px;
     letter-spacing: 0;
   }
-  main section article div h1.azul {
+  main section article div h1 span.azul {
     color: #0000A3;
   }
   main section article a input {
