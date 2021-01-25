@@ -57,8 +57,6 @@ header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -66,7 +64,6 @@ header nav {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  align-items: flex-end;
 }
 
 header nav div {
@@ -127,45 +124,54 @@ header nav div div span:nth-last-child(2) {
 
 header nav div input {
   position: absolute;
-  z-index: 3;
-  margin-right: 22px;
-  margin-top: 18px;
+  z-index: 2;
+  margin-right: 20px;
+  margin-top: 16px;
   opacity: 0;
 }
 
-header nav div input:checked ~ div span {
+header nav div input.abrir:not(:checked) ~ .menu {
+  -webkit-animation-name: cerrar-menu;
+          animation-name: cerrar-menu;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+header nav div input.abrir:checked ~ .menu {
+  -webkit-animation-name: abrir-menu;
+          animation-name: abrir-menu;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+header nav div input.abrir:checked ~ .menu li a:hover {
+  color: #00f3bb;
+  text-decoration: line-through;
+}
+
+header nav div input.abrir:checked ~ .menu li a:active {
+  color: rgba(6, 10, 36, 0.56);
+}
+
+header nav div input.abrir:checked ~ div span {
   opacity: 1;
   -webkit-transform: rotate(45deg) translate(-8px, -6px);
           transform: rotate(45deg) translate(-8px, -6px);
 }
 
-header nav div input:checked ~ div span:nth-last-child(3) {
+header nav div input.abrir:checked ~ div span:nth-last-child(3) {
   opacity: 0;
   -webkit-transform: rotate(0deg) scale(0.2, 0.2);
           transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-header nav div input:checked ~ div span:nth-last-child(2) {
+header nav div input.abrir:checked ~ div span:nth-last-child(2) {
   -webkit-transform: rotate(-45deg) translate(-3px, 2px);
           transform: rotate(-45deg) translate(-3px, 2px);
-}
-
-header nav div input:checked ~ .menu {
-  -webkit-animation-name: abrir-menu;
-          animation-name: abrir-menu;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-header nav div input:checked ~ .menu li a:hover {
-  color: #00f3bb;
-  text-decoration: line-through;
-}
-
-header nav div input:checked ~ .menu li a:active {
-  color: rgba(6, 10, 36, 0.56);
 }
 
 header nav div ul {
@@ -276,12 +282,12 @@ header nav div ul li a {
 
 @-webkit-keyframes abrir-menu {
   from {
-    height: 0%;
+    height: auto;
     -webkit-transform: translate(0, -100%);
             transform: translate(0, -100%);
   }
   to {
-    height: 100%;
+    height: auto;
     -webkit-transform: translate(0, 0%);
             transform: translate(0, 0%);
   }
@@ -289,14 +295,44 @@ header nav div ul li a {
 
 @keyframes abrir-menu {
   from {
-    height: 0%;
+    height: auto;
     -webkit-transform: translate(0, -100%);
             transform: translate(0, -100%);
   }
   to {
-    height: 100%;
+    height: auto;
     -webkit-transform: translate(0, 0%);
             transform: translate(0, 0%);
+  }
+}
+
+@-webkit-keyframes cerrar-menu {
+  0% {
+    height: auto;
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+  }
+  30% {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes cerrar-menu {
+  0% {
+    height: auto;
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+  }
+  30% {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+  }
+  100% {
+    height: 0px;
   }
 }
 
@@ -350,16 +386,19 @@ main section article div {
 }
 
 main section article div h1 {
+  padding-bottom: 20px;
+  line-height: 42px;
+}
+
+main section article div h1 span {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 36px;
   font-weight: 400;
   color: #060A24;
   letter-spacing: 0;
-  line-height: 42px;
-  padding-bottom: 20px;
 }
 
-main section article div h1.tachado {
+main section article div h1 span.tachado {
   text-decoration: line-through;
 }
 
@@ -377,6 +416,7 @@ main section article button {
 main section article button:hover {
   background-image: -webkit-linear-gradient(0deg, #00F0B8, #0000FE);
   color: #ffffff;
+  cursor: pointer;
 }
 
 main section.presentacion {
@@ -396,12 +436,22 @@ main section.presentacion article p {
 }
 
 main section.episodios {
-  background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 1100px, #ffffff 1101px);
-  padding-bottom: 1px;
+  background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+}
+
+main section.episodios div.diag-inicio {
+  width: 100%;
+  height: 64px;
+  background-image: linear-gradient(175deg, #ffffff 50%, rgba(0, 0, 0, 0) 51%);
+}
+
+main section.episodios div.diag-final {
+  width: 100%;
+  height: 133.5px;
+  background-image: linear-gradient(175deg, rgba(0, 0, 0, 0) 50%, #ffffff 51%);
 }
 
 main section.episodios h2 {
-  padding-top: 64px;
   color: #ffffff;
 }
 
@@ -417,7 +467,6 @@ main section.episodios section {
   padding-left: 11px;
   padding-right: 11px;
   padding-top: 21px;
-  padding-bottom: 37px;
 }
 
 main section.episodios section article {
@@ -429,25 +478,38 @@ main section.episodios section article {
 
 main section.episodios section article iframe {
   width: 100%;
-  height: 225px;
   border-radius: 10px;
+  height: 232px;
+  border: 0px;
 }
 
 main section.nosotros {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-image: -webkit-linear-gradient(95deg, #ffffff 810px, #0000A3 811.5px, #0000FF 8000px);
   padding-bottom: 54px;
 }
 
-main section.nosotros img {
+main section.nosotros div {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main section.nosotros div img {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  position: absolute;
   width: 360px;
   height: 519px;
 }
 
+main section.nosotros article {
+  padding-top: 450.5px;
+}
+
 main section.nosotros article h2 {
-  padding-top: 27px;
   padding-bottom: 8px;
 }
 
@@ -526,10 +588,16 @@ main section.topicos section article h3 {
 }
 
 main section.novedades {
-  background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 300px, #ffffff 301px);
+  background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main section.novedades div {
+  width: 100%;
+  height: 64px;
+  background-image: linear-gradient(175deg, #ffffff 50%, rgba(0, 0, 0, 0) 51%);
 }
 
 main section.novedades article {
@@ -538,7 +606,6 @@ main section.novedades article {
           align-items: center;
   padding-right: 16px;
   padding-left: 16px;
-  padding-top: 64px;
   padding-bottom: 67px;
 }
 
@@ -558,14 +625,16 @@ main section.novedades article a {
 @media screen and (min-width: 500px) {
   main section h2 {
     font-size: 48px;
+  }
+  main section h2.izquierda {
     padding-left: 200px;
     padding-top: 40px;
   }
-  main section article div h1 {
+  main section article div h1 span {
     font-size: 64px;
     letter-spacing: 0;
   }
-  main section article div h1.azul {
+  main section article div h1 span.azul {
     color: #0000A3;
   }
   main section article a input {
@@ -587,18 +656,19 @@ main section.novedades article a {
     padding-bottom: 56px;
     width: 628px;
   }
-  main section.episodios {
-    background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 940px, #ffffff 941px);
-    padding-bottom: 38px;
+  main section.episodios div.diag-inicio {
+    height: 186px;
   }
-  main section.episodios h2 {
-    padding-top: 186px;
+  main section.episodios div.diag-final {
+    height: 186.6px;
   }
   main section.episodios section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -608,47 +678,54 @@ main section.novedades article a {
   main section.episodios section article {
     padding-top: 26px;
     padding-bottom: 46px;
-    width: 47%;
   }
   main section.episodios section article iframe {
-    width: 100%;
+    width: 548px;
     height: 232px;
     border-radius: 10px;
   }
   main section.nosotros {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-bottom: 0px;
+  }
+  main section.nosotros div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    background-image: -webkit-linear-gradient(95deg, #ffffff 680px, #0000A3 684.5px, #0000FF 1800px);
+    width: 50%;
+    height: 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
-  main section.nosotros img {
+  main section.nosotros div img {
+    -webkit-transform: translateY(-170px);
+            transform: translateY(-170px);
     width: 457.6px;
     height: 660px;
-    padding-right: 31.2px;
+    margin-right: 62.4px;
   }
   main section.nosotros article {
-    padding-left: 31.2px;
+    padding-top: 20.4px;
   }
   main section.nosotros article h2 {
-    padding-left: 0px;
-    padding-top: 189px;
+    padding-left: 0;
     padding-bottom: 24px;
   }
   main section.nosotros article p {
     width: 464px;
-    height: 204px;
     padding-bottom: 10px;
     padding-left: 0px;
   }
   main section.entrevistas {
     padding-bottom: 64px;
+    padding-top: 245px;
   }
   main section.entrevistas h2 {
-    padding-top: 64px;
     padding-bottom: 36px;
   }
   main section.entrevistas article {
@@ -690,16 +767,17 @@ main section.novedades article a {
     padding-top: 29px;
   }
   main section.novedades {
-    background-image: -webkit-linear-gradient(95deg, #0000A3 0px, #0000FF 510px, #ffffff 511px);
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  main section.novedades div {
+    height: 213px;
   }
   main section.novedades article {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 213px;
     padding-bottom: 151px;
   }
   main section.novedades article h2 {

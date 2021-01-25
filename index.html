@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,7 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <title>ProyectoCSS</title>
+    <title>Podcasts-Chanell</title>
+    <script src="https://kit.fontawesome.com/6f4bc818d3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,60 +25,61 @@
         <img src="images/logo.svg" alt="">
         <nav>
             <div>
-                <input type="checkbox" />
                 <div>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+                <input class="abrir cerrar" type="checkbox" name="menu" />
                 <ul class="menu">
                     <li><a href="#episodios">EPISODIOS</a></li>
                     <li><a href="#nosotros">NOSOTROS</a></li>
-                    <li><a href="#entrevistas">ENTREVSTAS</a></li>
+                    <li><a href="#entrevistas">ENTREVISTAS</a></li>
                     <li><a href="#topicos">T&Oacute;PICOS</a></li>
                 </ul>
             </div>
-
         </nav>
     </header>
     <main>
         <section class="presentacion">
             <article>
                 <div>
-                    <h1>Hello&nbsp;</h1>
-                    <h1 class="tachado">world</h1>
-                    <h1>&nbsp;</h1>
-                    <h1>pale blue dot</h1>
-                    <h1 class="azul">.</h1>
+                    <h1>
+                        <span>Hello&nbsp;</span>
+                        <span class="tachado">world</span>
+                        <span>&nbsp;</span>
+                        <span>pale blue dot</span>
+                        <span class="azul">.</span>
+                    </h1>
                 </div>
-                <p>El portal de podcasts que explora el mindo de la programaci&oacute;n y la tecnolog&iacute;a. Nuevos
+                <p>El portal de podcasts que explora el mundo de la programaci&oacute;n y la tecnolog&iacute;a. Nuevos
                     episodios, todos los jueves cada 15 d&iacute;as.</p>
                 <a href="#nosotros"><button>CONOC&Eacute; M&Aacute;S</button></a>
             </article>
         </section>
         <section class="episodios" id="episodios">
-            <h2>Episodios</h2>
+            <div class="diag-inicio"></div>
+            <h2 class="izquierda">Episodios</h2>
             <section>
                 <article>
-                    <iframe src="https://open.spotify.com/embed-podcast/episode/6eCHJ8yOYtksW8OT93Dbdu" width="100%"
-                        height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed-podcast/episode/6eCHJ8yOYtksW8OT93Dbdu" allow="encrypted-media"></iframe>
                 </article>
                 <article>
-                    <iframe src="https://open.spotify.com/embed-podcast/episode/1ezdL2ivAGLwSE6Xbssxqt" width="100%"
-                        height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed-podcast/episode/1ezdL2ivAGLwSE6Xbssxqt" allow="encrypted-media"></iframe>
                 </article>
                 <article>
-                    <iframe src="https://open.spotify.com/embed-podcast/episode/3cWta1iiQSfvrdHaCbLkSD" width="100%"
-                        height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed-podcast/episode/3cWta1iiQSfvrdHaCbLkSD" allow="encrypted-media"></iframe>
                 </article>
                 <article>
-                    <iframe src="https://open.spotify.com/embed-podcast/episode/31VyAQAwBiKoHVoYUCEzjQ" width="100%"
-                        height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed-podcast/episode/31VyAQAwBiKoHVoYUCEzjQ" allow="encrypted-media"></iframe>
                 </article>
             </section>
+            <div class="diag-final"></div>
         </section>
         <section class="nosotros" id="nosotros">
-            <img src="images/phone.png" alt="telefono">
+            <div>
+                <img src="images/phone.png" alt="telefono">
+            </div>
             <article>
                 <h2>De d&oacute;nde venimos</h2>
                 <p>Our posturing, our imagined self-importance, the delusion that we have some privileged position in
@@ -86,19 +89,19 @@
             </article>
         </section>
         <section class="entrevistas" id="entrevistas">
-            <h2>Invitadas/os estelares</h2>
+            <h2 class="izquierda">Invitadas/os estelares</h2>
             <article>
-                <img src="images/grace-hopper.png" alt="">
-                <img src="images/Katie-Bouman.png" alt="">
-                <img src="images/Margaret_Hamilton.png" alt="">
-                <img src="images/An-E.R.A.Univac-1103-computer-in-the-1950s.png" alt="">
+                <img src="images/grace-hopper.png" alt="grace-hopper">
+                <img src="images/Katie-Bouman.png" alt="Katie-Bouman">
+                <img src="images/Margaret_Hamilton.png" alt="Margaret-Hamilton">
+                <img src="images/An-E.R.A.Univac-1103-computer-in-the-1950s.png" alt="computer-in-the-1950s">
                 <img src="images/Computer-operators-with-an-Eniac-the-world’s-first-programmable-general-purpose-computer.png"
-                    alt="">
-                <img src="images/susan-kare.png" alt="">
+                    alt="first-programmable-general-purpose-computer">
+                <img src="images/susan-kare.png" alt="susan-kare">
             </article>
         </section>
         <section class="topicos" id="topicos">
-            <h2>Algunos de nuestros temas</h2>
+            <h2 class="izquierda">Algunos de nuestros temas</h2>
             <section>
                 <article>
                     <img src="images/icon1.svg" alt="">
@@ -119,6 +122,7 @@
             </section>
         </section>
         <section class="novedades">
+            <div></div>
             <article>
                 <h2>&iquest;Quer&eacute;s las &uacute;ltimas novedades?</h2>
                 <a href="#episodios"><button>ESCUCH&Aacute; LOS EPISODIOS</button></a>
@@ -129,10 +133,11 @@
         <p>&copy; 2019- Hello blue pale dot</p>
         <nav>
             <ul>
-                <li><a href=""><img src="images/spotify.png" alt=""></a></li>
-                <li><a href=""><img src="images/instagram.png" alt=""></a></li>
-                <li><a href=""><img src="images/twitter.png" alt=""></a></li>
-                <li><a href=""><img src="images/facebook.png" alt=""></a></li>
+                <li><a href="https://www.spotify.com/ar/"><i class="fab fa-spotify"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com/?lang=es"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://web.telegram.org/"><i class="fab fa-telegram"></i></a></li>
             </ul>
         </nav>
     </footer>
